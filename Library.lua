@@ -495,6 +495,7 @@
     
     -- Library element functions
         function library:window(properties)
+			print(properties)
             local cfg = { 
                 suffix = properties.Suffix or "tech";
                 title = properties.Title or "nebula";
@@ -505,7 +506,6 @@
 
                 tween;
             }
-            print(properties)
             library[ "items" ] = library:create( "ScreenGui" , {
                 Parent = coregui;
                 Name = "\0";

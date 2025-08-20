@@ -8,7 +8,7 @@ local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Playe
   Also I haven't even got a clue how this got leaked since loads of people had it.
 ]]
 
-local window = library:window({Title = "nebula", Suffix = "tech", GameInfo = "Milenium for Counter-Strike: Global Offensive", Size = Udim2(0, 600, 0, 350})
+local window = library:window({Title = "nebula", Suffix = "tech", GameInfo = "Milenium for Counter-Strike: Global Offensive", Size = Udim2(0, 600, 0, 350)})
 
 window:seperator({name = "General"})
 local enemies, teammates, self_section = window:tab({name = "Example", tabs = {"Enemies", "Teammates", "Self"}})

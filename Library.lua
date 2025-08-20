@@ -496,16 +496,16 @@
     -- Library element functions
         function library:window(properties)
             local cfg = { 
-                suffix = properties.suffix or properties.Suffix or "tech";
-                name = properties.name or properties.Name or "nebula";
-                game_name = properties.gameInfo or properties.game_info or properties.GameInfo or "Milenium for Counter-Strike: Global Offensive";
-                size = properties.size or properties.Size or dim2(0, 700, 0, 565);
+                suffix = properties.Suffix or "tech";
+                title = properties.Title or "nebula";
+                game_info = properties.GameInfo or "Milenium for Counter-Strike: Global Offensive";
+                size = properties.Size or dim2(0, 600, 0, 350);
                 selected_tab;
                 items = {};
 
                 tween;
             }
-            
+            print(properties)
             library[ "items" ] = library:create( "ScreenGui" , {
                 Parent = coregui;
                 Name = "\0";
@@ -596,7 +596,7 @@
                     Text = name;
                     Parent = items[ "side_frame" ];
                     Name = "\0";
-                    Text = string.format('<u>%s</u><font color = "rgb(255, 255, 255)">%s</font>', cfg.name, cfg.suffix);
+                    Text = string.format('<u>%s</u><font color = "rgb(255, 255, 255)">%s</font>', cfg.title, cfg.suffix);
                     BackgroundTransparency = 1;
                     Size = dim2(1, 0, 0, 70);
                     TextColor3 = themes.preset.accent;
@@ -692,7 +692,7 @@
                     Parent = items[ "info" ];
                     TextColor3 = rgb(72, 72, 73);
                     BorderColor3 = rgb(0, 0, 0);
-                    Text = cfg.game_name;
+                    Text = cfg.game_info;
                     Name = "\0";
                     Size = dim2(1, 0, 0, 0);
                     AnchorPoint = vec2(0, 0.5);
@@ -711,7 +711,7 @@
                     Name = "\0";
                     TextColor3 = themes.preset.accent;
                     BorderColor3 = rgb(0, 0, 0);
-                    Text = '<font color="rgb(72, 72, 73)">32 days left, </font>' .. cfg.name .. cfg.suffix;
+                    Text = '<font color="rgb(72, 72, 73)">32 days left, </font>' .. cfg.title .. cfg.suffix;
                     Size = dim2(1, 0, 0, 0);
                     Position = dim2(0, -10, 0.5, -1);
                     AnchorPoint = vec2(0, 0.5);
@@ -806,7 +806,7 @@
                         FontFace = fonts.font;
                         TextColor3 = rgb(72, 72, 73);
                         BorderColor3 = rgb(0, 0, 0);
-                        Text = cfg.name;
+                        Text = cfg.title;
                         Parent = items[ "button" ];
                         Name = "\0";
                         Size = dim2(0, 0, 1, 0);
@@ -1084,7 +1084,7 @@
                     FontFace = fonts.font;
                     TextColor3 = rgb(72, 72, 73);
                     BorderColor3 = rgb(0, 0, 0);
-                    Text = cfg.name;
+                    Text = cfg.title;
                     Parent = self.items[ "button_holder" ];
                     Name = "\0";
                     Size = dim2(1, 0, 0, 0);
@@ -1293,7 +1293,7 @@
                     FontFace = fonts.font;
                     TextColor3 = rgb(255, 255, 255);
                     BorderColor3 = rgb(0, 0, 0);
-                    Text = cfg.name;
+                    Text = cfg.title;
                     Parent = items[ "button" ];
                     Name = "\0";
                     Size = dim2(0, 0, 1, 0);
@@ -1453,7 +1453,7 @@
                     FontFace = fonts.small;
                     TextColor3 = rgb(245, 245, 245);
                     BorderColor3 = rgb(0, 0, 0);
-                    Text = cfg.name;
+                    Text = cfg.title;
                     Parent = items[ "toggle" ];
                     Name = "\0";
                     Size = dim2(1, 0, 0, 0);
@@ -1719,7 +1719,7 @@
                     FontFace = fonts.small;
                     TextColor3 = rgb(245, 245, 245);
                     BorderColor3 = rgb(0, 0, 0);
-                    Text = cfg.name;
+                    Text = cfg.title;
                     Parent = items[ "slider_object" ];
                     Name = "\0";
                     Size = dim2(1, 0, 0, 0);
@@ -2258,7 +2258,7 @@
                     FontFace = fonts.small;
                     TextColor3 = rgb(245, 245, 245);
                     BorderColor3 = rgb(0, 0, 0);
-                    Text = cfg.name;
+                    Text = cfg.title;
                     Parent = items[ "label" ];
                     Name = "\0";
                     Size = dim2(1, 0, 0, 0);
@@ -2356,7 +2356,7 @@
 
             local label; 
             if not self.items.right_components then 
-                label = self:label({name = cfg.name, seperator = cfg.seperator})
+                label = self:label({name = cfg.title, seperator = cfg.seperator})
             end
 
             local items = cfg.items; do 
@@ -2844,7 +2844,7 @@
                     FontFace = fonts.font;
                     TextColor3 = rgb(245, 245, 245);
                     BorderColor3 = rgb(0, 0, 0);
-                    Text = cfg.name;
+                    Text = cfg.title;
                     Parent = items[ "textbox" ];
                     Name = "\0";
                     Size = dim2(1, 0, 0, 0);
@@ -2985,7 +2985,7 @@
                         FontFace = fonts.font;
                         TextColor3 = rgb(245, 245, 245);
                         BorderColor3 = rgb(0, 0, 0);
-                        Text = cfg.name;
+                        Text = cfg.title;
                         Parent = items[ "keybind_element" ];
                         Name = "\0";
                         Size = dim2(1, 0, 0, 0);
@@ -3320,7 +3320,7 @@
                     FontFace = fonts.small;
                     TextColor3 = rgb(245, 245, 245);
                     BorderColor3 = rgb(0, 0, 0);
-                    Text = cfg.name;
+                    Text = cfg.title;
                     Parent = items[ "button" ];
                     Name = "\0";
                     BackgroundTransparency = 1;
@@ -3636,7 +3636,7 @@
                     FontFace = fonts.font;
                     TextColor3 = rgb(255, 255, 255);
                     BorderColor3 = rgb(0, 0, 0);
-                    Text = cfg.name;
+                    Text = cfg.title;
                     Parent = items[ "notification" ];
                     Name = "\0";
                     BackgroundTransparency = 1;
